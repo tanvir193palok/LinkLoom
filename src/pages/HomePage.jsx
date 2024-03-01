@@ -1,10 +1,11 @@
 import React from "react";
-import Header from "../components/common/Header";
+import { useAuth } from "../hooks/useAuth";
 
 const HomePage = () => {
+  const { auth } = useAuth();
+
   return (
     <div>
-      <Header />
       HomePage
     </div>
   );
