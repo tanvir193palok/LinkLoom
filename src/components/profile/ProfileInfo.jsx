@@ -1,7 +1,6 @@
-import React from "react";
-import ProfileImage from "./ProfileImage";
-import Bio from "./Bio";
 import { useProfile } from "../../hooks/useProfile";
+import Bio from "./Bio";
+import ProfileImage from "./ProfileImage";
 
 const ProfileInfo = () => {
   const { state } = useProfile();
