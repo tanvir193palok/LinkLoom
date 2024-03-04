@@ -1,46 +1,49 @@
-
-import { useEffect, useState } from "react"
-import { useAxios } from "../hooks/useAxios"
+import { useEffect } from "react";
+import { useAxios } from "../hooks/useAxios";
 import { useAuth } from "../hooks/useAuth";
-
+import { useProfile } from "../hooks/useProfile";
+import { actions } from "../actions";
+import ProfileInfo from "../components/profile/ProfileInfo";
+import MyPosts from "../components/profile/MyPosts";
 
 const ProfilePage = () => {
-  const [user, setUser] = useState(null);
-  const [posts, setPosts] = useState([]);
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState(null);
-
-  const {api} = useAxios();
-  const {auth} = useAuth();
+  const { state, dispatch } = useProfile();
+  const { api } = useAxios();
+  const { auth } = useAuth();
 
   useEffect(() => {
-    setLoading(true);
+    dispatch({ type: actions.profile.DATA_FETCHING });
     const fetchProfile = async () => {
       try {
-        const response = await api.get(`${import.meta.env.VITE_SERVER_BASE_URL}/profile/${auth?.user?.id}`)
+        const response = await api.get(
+          `${import.meta.env.VITE_SERVER_BASE_URL}/profile/${auth?.user?.id}`
+        );
 
-        setUser(response?.data?.user);
-        setPosts(response?.data?.posts)
-      } catch(error) {
+        if (response.status === 200) {
+          dispatch({ type: actions.profile.DATA_FETCHED, data: response.data });
+        }
+      } catch (error) {
         console.error(error);
-        setError(error)
-      } finally {
-        setLoading(false)
+        dispatch({
+          type: actions.profile.DATA_FETCH_ERROR,
+          error: error.message,
+        });
       }
-    }
+    };
 
     fetchProfile();
-  }, [])
+  }, []);
 
-  if (loading) {
-    return <div>Fetching your Profile data...</div>
+  if (state.loading) {
+    return <div>Fetching your Profile data...</div>;
   }
 
   return (
-    <div>
-      {user?.firstName}
-    </div>
-  )
-}
+    <>
+      <ProfileInfo />
+      <MyPosts />
+    </>
+  );
+};
 
-export default ProfilePage
+export default ProfilePage;
