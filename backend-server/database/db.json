@@ -60,6 +60,16 @@
             "name": "Saad Hasan",
             "avatar": "uploads/avatar/avatar-1708789609571-36760872.jpeg"
           }
+        },
+        {
+          "id": "e553edc9-c2a7-4025-bcbd-b51adc7c8282",
+          "comment": "Nice Dada...Take love",
+          "createdAt": "2024-03-05T21:30:52.227Z",
+          "author": {
+            "id": "6fd3ed42-2275-4d5f-a436-e5a3bf586c56",
+            "name": "Saad Hasan",
+            "avatar": "uploads/avatar/avatar-1709552113204-112310616.png"
+          }
         }
       ],
       "likes": [
@@ -109,9 +119,7 @@
           }
         }
       ],
-      "likes": [
-        "6fd3ed42-2275-4d5f-a436-e5a3bf586c56"
-      ],
+      "likes": [],
       "createAt": "2024-02-24T12:18:21.686Z"
     },
     {
@@ -248,7 +256,48 @@
         "name": "Tapas Adhikary",
         "avatar": "uploads/avatar/avatar-1708770640883-148182382.png"
       },
-      "comments": [],
+      "comments": [
+        {
+          "id": "6c243512-3825-4c4c-bb22-cfae92094ee7",
+          "comment": "Nice Dada...Take love",
+          "createdAt": "2024-03-05T21:30:21.898Z",
+          "author": {
+            "id": "6fd3ed42-2275-4d5f-a436-e5a3bf586c56",
+            "name": "Saad Hasan",
+            "avatar": "uploads/avatar/avatar-1709552113204-112310616.png"
+          }
+        },
+        {
+          "id": "90815869-19f6-4bf1-bcfe-b4431d47697e",
+          "comment": "Nice Dada...Take love",
+          "createdAt": "2024-03-05T21:30:23.073Z",
+          "author": {
+            "id": "6fd3ed42-2275-4d5f-a436-e5a3bf586c56",
+            "name": "Saad Hasan",
+            "avatar": "uploads/avatar/avatar-1709552113204-112310616.png"
+          }
+        },
+        {
+          "id": "40cf9c74-4043-4aa4-a990-17b606d9be8f",
+          "comment": "Nice Dada...Take love",
+          "createdAt": "2024-03-05T21:30:39.456Z",
+          "author": {
+            "id": "6fd3ed42-2275-4d5f-a436-e5a3bf586c56",
+            "name": "Saad Hasan",
+            "avatar": "uploads/avatar/avatar-1709552113204-112310616.png"
+          }
+        },
+        {
+          "id": "04a647af-2897-4310-a8dc-7657732e7ca2",
+          "comment": "Nice Dada...Take love",
+          "createdAt": "2024-03-05T21:31:09.092Z",
+          "author": {
+            "id": "6fd3ed42-2275-4d5f-a436-e5a3bf586c56",
+            "name": "Saad Hasan",
+            "avatar": "uploads/avatar/avatar-1709552113204-112310616.png"
+          }
+        }
+      ],
       "likes": [],
       "createAt": "2024-02-24T12:31:17.794Z"
     },
@@ -262,7 +311,18 @@
         "name": "Saad Hasan",
         "avatar": "uploads/avatar/avatar-1708789609571-36760872.jpeg"
       },
-      "comments": [],
+      "comments": [
+        {
+          "id": "2a0ee10b-c9e1-4eda-b2d5-74cdcb3e8785",
+          "comment": "Hello Saad bro...",
+          "createdAt": "2024-03-05T21:33:38.210Z",
+          "author": {
+            "id": "6fd3ed42-2275-4d5f-a436-e5a3bf586c56",
+            "name": "Saad Hasan",
+            "avatar": "uploads/avatar/avatar-1709552113204-112310616.png"
+          }
+        }
+      ],
       "likes": [],
       "createAt": "2024-02-25T06:03:47.813Z"
     },
@@ -276,7 +336,18 @@
         "name": "Saad Hasan",
         "avatar": "uploads/avatar/avatar-1708789609571-36760872.jpeg"
       },
-      "comments": [],
+      "comments": [
+        {
+          "id": "332c5a52-3fe6-4a56-b89b-37b500b9ca2b",
+          "comment": "Hey",
+          "createdAt": "2024-03-05T21:39:14.197Z",
+          "author": {
+            "id": "6fd3ed42-2275-4d5f-a436-e5a3bf586c56",
+            "name": "Saad Hasan",
+            "avatar": "uploads/avatar/avatar-1709552113204-112310616.png"
+          }
+        }
+      ],
       "likes": [],
       "createAt": "2024-02-25T06:25:58.990Z"
     },
