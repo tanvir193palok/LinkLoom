@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useAvatar } from "../../hooks/useAvatar";
 import PostCommentList from "./PostCommentList";
 
-const PostComments = ({ post }) => {
+const PostComments = ({ post, commentCount }) => {
   const [showComments, setShowComments] = useState(false);
   const { avatarURL } = useAvatar(post);
 
@@ -30,7 +30,7 @@ const PostComments = ({ post }) => {
           className="text-gray-300 max-md:text-sm"
           onClick={() => setShowComments(!showComments)}
         >
-          All Comment ▾
+          {commentCount === 0 ? "No Comments" : "All Comment ▾"}
         </button>
       </div>
       {showComments && <PostCommentList comments={post?.comments} />}

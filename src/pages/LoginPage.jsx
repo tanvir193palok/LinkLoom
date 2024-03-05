@@ -15,7 +15,8 @@ const LoginPage = () => {
             />
             <div>
               <h1 className="mb-3 text-4xl font-bold lg:text-[60px]">
-                Link <span className="text-lg text-[#00D991] -ml-[10px]">Loom</span>
+                Link{" "}
+                <span className="text-lg text-[#00D991] -ml-[10px]">Loom</span>
               </h1>
               <p className="max-w-[452px] text-gray-600/95 lg:text-lg">
                 Create a social media app with features like, showing the post,

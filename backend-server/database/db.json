@@ -514,6 +514,15 @@
       "avatar": "uploads/avatar/avatar-1708802845791-219561000.png",
       "email": "rambo@email.com",
       "bio": "I am Rambo!!!"
+    },
+    {
+      "id": "d689cf28-122d-4e3c-b433-fc7b98984a81",
+      "password": "$2b$08$U8fagNiaEWQ7sL7LZmF.KebPCL2Lxf/sfk98Eo7FBsiQ70sOnezwG",
+      "firstName": "Tanvir Ahmed",
+      "lastName": "Palok",
+      "avatar": "uploads/avatar/avatar-1709654571803-724410586.png",
+      "email": "tanvir.ahmed.palok@g.bracu.ac.bd",
+      "bio": "Enthusiastic Frontend Developer Seeking Internship Opportunity | JavaScript | React | Java | Python"
     }
   ]
 }
