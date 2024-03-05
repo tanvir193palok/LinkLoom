@@ -1,10 +1,9 @@
 import { useState } from "react";
-import { useAvatar } from "../../hooks/useAvatar";
 import PostCommentList from "./PostCommentList";
 import { useAxios } from "../../hooks/useAxios";
 import { useAuth } from "../../hooks/useAuth";
 
-const PostComments = ({ post }) => {
+const PostComments = ({ post, commentCount, setCommentCount }) => {
   const [showComments, setShowComments] = useState(false);
 
   //state for all comments
@@ -27,6 +26,9 @@ const PostComments = ({ post }) => {
 
         if (response.status === 200) {
           setComments([...response.data.comments]);
+          setCommentCount(commentCount + 1);
+          setComment("");
+          setShowComments(true);
         }
       } catch (error) {
         console.error(error);
@@ -46,7 +48,7 @@ const PostComments = ({ post }) => {
         <div className="flex-1">
           <input
             type="text"
-            className="h-8 w-full rounded-full bg-lighterDark px-4 text-xs focus:outline-none sm:h-[38px]"
+            className="h-8 w-full rounded-full bg-lighterDark px-4 text-md focus:outline-none sm:h-[38px]"
             name="post"
             id="post"
             value={comment}
@@ -61,7 +63,7 @@ const PostComments = ({ post }) => {
           className="text-gray-300 max-md:text-sm"
           onClick={() => setShowComments(!showComments)}
         >
-          {post?.comments?.length === 0 ? "No Comments" : "All Comment ▾"}
+          {commentCount === 0 ? "No Comments" : "All Comment ▾"}
         </button>
       </div>
       {showComments && <PostCommentList comments={comments} />}
