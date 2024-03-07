@@ -6,10 +6,11 @@ import { useForm } from "react-hook-form";
 import Field from "../common/Field";
 import AddPhoto from "../../assets/icons/addPhoto.svg";
 import { actions } from "../../actions";
+import { IoMdCloseCircle } from "react-icons/io";
 
-const PostEntry = ({ onCreate }) => {
+const PostEntry = () => {
   const { auth } = useAuth();
-  const { dispatch } = usePost();
+  const { dispatch, setShowPostEntry } = usePost();
   const { api } = useAxios();
   const { state: profile } = useProfile();
 
@@ -36,9 +37,9 @@ const PostEntry = ({ onCreate }) => {
           type: actions.post.DATA_CREATED,
           data: response.data,
         });
-        
+
         // Close this UI
-        onCreate();
+        setShowPostEntry(false);
       }
     } catch (error) {
       console.error(error);
@@ -50,9 +51,17 @@ const PostEntry = ({ onCreate }) => {
   };
   return (
     <div className="card relative">
-      <h6 className="mb-3 text-center text-lg font-bold lg:text-xl">
-        Create Post
-      </h6>
+      <div className="flex justify-between">
+        <h6 className="mb-3 ml-80 text-center text-lg font-bold lg:text-xl">
+          Create Post
+        </h6>
+        <button
+          className="text-3xl mb-3"
+          onClick={() => setShowPostEntry(false)}
+        >
+          <IoMdCloseCircle />
+        </button>
+      </div>
       <form onSubmit={handleSubmit(handlePostSubmit)}>
         <div className="mb-3 flex items-center justify-between gap-2 lg:mb-6 lg:gap-4">
           <div className="flex items-center gap-3">
@@ -69,7 +78,6 @@ const PostEntry = ({ onCreate }) => {
               <span className="text-sm text-gray-400 lg:text-base">Public</span>
             </div>
           </div>
-
           <label
             className="btn-primary cursor-pointer !text-gray-100"
             htmlFor="photo"

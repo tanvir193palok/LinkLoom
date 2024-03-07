@@ -11,13 +11,16 @@ import { useAuth } from "../../hooks/useAuth";
 import { usePost } from "../../hooks/usePost";
 import { actions } from "../../actions";
 import { useAxios } from "../../hooks/useAxios";
+import PostEntry from "./PostEntry";
 
 const PostHeader = ({ post }) => {
   const [showAction, setShowAction] = useState(false);
   const { avatarURL } = useAvatar(post);
+  const [editPost, setEditPost] = useState(null);
+
   const { auth } = useAuth();
-  const {dispatch} = usePost();
-  const {api} = useAxios()
+  const { dispatch, setShowPostEntry } = usePost();
+  const { api } = useAxios();
 
   const isMe = post?.author?.id === auth?.user?.id;
 
@@ -25,7 +28,15 @@ const PostHeader = ({ post }) => {
     setShowAction(!showAction);
   };
 
-  const handleDeletePost =async (event) => {
+  //post edit function
+  const handleEditPost = () => {
+    setEditPost(post);
+    setShowPostEntry(true);
+    setShowAction(false);
+  };
+
+  //Post delete function
+  const handleDeletePost = async (event) => {
     dispatch({ type: actions.post.DATA_FETCHING });
 
     try {
@@ -38,7 +49,6 @@ const PostHeader = ({ post }) => {
           type: actions.post.POST_DELETED,
           data: post.id,
         });
-
       }
     } catch (error) {
       console.error(error);
@@ -47,7 +57,7 @@ const PostHeader = ({ post }) => {
         error: response.error,
       });
     }
-  }
+  };
 
   return (
     <header className="flex items-center justify-between gap-4">
@@ -78,7 +88,10 @@ const PostHeader = ({ post }) => {
 
         {showAction && (
           <div className="action-modal-container">
-            <button className="action-menu-item hover:text-lwsGreen">
+            <button
+              className="action-menu-item hover:text-lwsGreen"
+              onClick={handleEditPost}
+            >
               <img src={EditIcon} alt="Edit" />
               Edit
             </button>
