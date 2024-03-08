@@ -7,15 +7,26 @@ import Field from "../common/Field";
 import AddPhoto from "../../assets/icons/addPhoto.svg";
 import { actions } from "../../actions";
 import { IoMdCloseCircle } from "react-icons/io";
+import { useState } from "react";
 
 const PostEntry = ({ setShowModal }) => {
   const { auth } = useAuth();
   const { dispatch, postToEdit, setPostToEdit } = usePost();
   const { api } = useAxios();
   const { state: profile } = useProfile();
-  console.log(postToEdit);
 
   const user = profile?.user ?? auth?.user;
+
+  const [post, setPost] = useState(() => {
+    if (postToEdit) {
+      return postToEdit;
+    } else {
+      return {
+        content: "",
+        image: "",
+      };
+    }
+  });
 
   const {
     register,
@@ -62,11 +73,23 @@ const PostEntry = ({ setShowModal }) => {
     }
   };
 
+  //Function for handling Post Entry field change
+  const handleChange = (event) => {
+    const name = event.target.name;
+    const value = event.target.value;
+
+    setPost({
+      ...post,
+      [name]: value,
+    });
+  };
+
+  //Function for closing the Post Entry
   const closeModal = () => {
     setShowModal();
     setPostToEdit(null);
   };
-  
+
   return (
     <div className="card relative">
       <div className="flex justify-between">
@@ -100,7 +123,14 @@ const PostEntry = ({ setShowModal }) => {
             <img src={AddPhoto} alt="Add Photo" />
             Add Photo
           </label>
-          <input type="file" name="photo" id="photo" className="hidden" />
+          <input
+            type="file"
+            name="photo"
+            id="photo"
+            value={post.image}
+            onChange={handleChange}
+            className="hidden"
+          />
         </div>
         <Field label="" error={errors.content}>
           <textarea
@@ -109,6 +139,8 @@ const PostEntry = ({ setShowModal }) => {
             })}
             name="content"
             id="content"
+            value={post.content}
+            onChange={handleChange}
             placeholder="Share your thoughts..."
             className="h-[120px] w-full bg-transparent focus:outline-none lg:h-[160px]"
           ></textarea>

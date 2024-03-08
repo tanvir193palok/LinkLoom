@@ -11,12 +11,10 @@ import { useAuth } from "../../hooks/useAuth";
 import { usePost } from "../../hooks/usePost";
 import { actions } from "../../actions";
 import { useAxios } from "../../hooks/useAxios";
-import PostEntry from "./PostEntry";
 
-const PostHeader = ({ post }) => {
+const PostHeader = ({ post, setShowPostEntry }) => {
   const [showAction, setShowAction] = useState(false);
   const { avatarURL } = useAvatar(post);
-  const [showPostEntry, setShowPostEntry] = useState(false);
 
   const { auth } = useAuth();
   const { dispatch, setPostToEdit } = usePost();
@@ -61,27 +59,23 @@ const PostHeader = ({ post }) => {
 
   return (
     <header className="flex items-center justify-between gap-4">
-      {showPostEntry ? (
-        <PostEntry setShowModal={() => setShowPostEntry(false)} />
-      ) : (
-        <div className="flex items-center gap-3">
-          <img
-            className="max-w-10 max-h-10 rounded-full lg:max-h-[58px] lg:max-w-[58px]"
-            src={avatarURL}
-            alt="avatar"
-          />
-          <div>
-            <h6 className="text-lg lg:text-xl">{post?.author?.name}</h6>
-            <div className="flex items-center gap-1.5">
-              <img src={TimeIcon} alt="time" />
-              <span className="text-sm text-gray-400 lg:text-base">{`${getDateDifferenceFromNow(
-                post?.createAt
-              )} ago`}</span>
-              <span className="text-sm text-gray-400 lg:text-base"></span>
-            </div>
+      <div className="flex items-center gap-3">
+        <img
+          className="max-w-10 max-h-10 rounded-full lg:max-h-[58px] lg:max-w-[58px]"
+          src={avatarURL}
+          alt="avatar"
+        />
+        <div>
+          <h6 className="text-lg lg:text-xl">{post?.author?.name}</h6>
+          <div className="flex items-center gap-1.5">
+            <img src={TimeIcon} alt="time" />
+            <span className="text-sm text-gray-400 lg:text-base">{`${getDateDifferenceFromNow(
+              post?.createAt
+            )} ago`}</span>
+            <span className="text-sm text-gray-400 lg:text-base"></span>
           </div>
         </div>
-      )}
+      </div>
 
       <div className="relative">
         {isMe && (
