@@ -16,10 +16,10 @@ import PostEntry from "./PostEntry";
 const PostHeader = ({ post }) => {
   const [showAction, setShowAction] = useState(false);
   const { avatarURL } = useAvatar(post);
-  const [editPost, setEditPost] = useState(null);
+  const [showPostEntry, setShowPostEntry] = useState(false);
 
   const { auth } = useAuth();
-  const { dispatch, setShowPostEntry } = usePost();
+  const { dispatch, setPostToEdit } = usePost();
   const { api } = useAxios();
 
   const isMe = post?.author?.id === auth?.user?.id;
@@ -30,7 +30,7 @@ const PostHeader = ({ post }) => {
 
   //post edit function
   const handleEditPost = () => {
-    setEditPost(post);
+    setPostToEdit(post);
     setShowPostEntry(true);
     setShowAction(false);
   };
@@ -61,23 +61,27 @@ const PostHeader = ({ post }) => {
 
   return (
     <header className="flex items-center justify-between gap-4">
-      <div className="flex items-center gap-3">
-        <img
-          className="max-w-10 max-h-10 rounded-full lg:max-h-[58px] lg:max-w-[58px]"
-          src={avatarURL}
-          alt="avatar"
-        />
-        <div>
-          <h6 className="text-lg lg:text-xl">{post?.author?.name}</h6>
-          <div className="flex items-center gap-1.5">
-            <img src={TimeIcon} alt="time" />
-            <span className="text-sm text-gray-400 lg:text-base">{`${getDateDifferenceFromNow(
-              post?.createAt
-            )} ago`}</span>
-            <span className="text-sm text-gray-400 lg:text-base"></span>
+      {showPostEntry ? (
+        <PostEntry setShowModal={() => setShowPostEntry(false)} />
+      ) : (
+        <div className="flex items-center gap-3">
+          <img
+            className="max-w-10 max-h-10 rounded-full lg:max-h-[58px] lg:max-w-[58px]"
+            src={avatarURL}
+            alt="avatar"
+          />
+          <div>
+            <h6 className="text-lg lg:text-xl">{post?.author?.name}</h6>
+            <div className="flex items-center gap-1.5">
+              <img src={TimeIcon} alt="time" />
+              <span className="text-sm text-gray-400 lg:text-base">{`${getDateDifferenceFromNow(
+                post?.createAt
+              )} ago`}</span>
+              <span className="text-sm text-gray-400 lg:text-base"></span>
+            </div>
           </div>
         </div>
-      </div>
+      )}
 
       <div className="relative">
         {isMe && (

@@ -4,11 +4,16 @@ import { PostContext } from "../context/Index";
 
 const PostProvider = ({ children }) => {
   const [state, dispatch] = useReducer(postReducer, initialState);
-  const [showPostEntry, setShowPostEntry] = useState(false);
+  const [postToEdit, setPostToEdit] = useState(null);
 
   return (
     <PostContext.Provider
-      value={{ state, dispatch, showPostEntry, setShowPostEntry }}
+      value={{
+        state,
+        dispatch,
+        postToEdit,
+        setPostToEdit,
+      }}
     >
       {children}
     </PostContext.Provider>

@@ -463,33 +463,6 @@
       "createAt": "2024-02-25T06:57:46.023Z"
     },
     {
-      "id": "782bbca7-dea3-4705-92aa-f191635c141a",
-      "content": "123",
-      "image": null,
-      "postType": "text",
-      "author": {
-        "id": "6fd3ed42-2275-4d5f-a436-e5a3bf586c56",
-        "name": "Saad Hasan",
-        "avatar": "uploads/avatar/avatar-1708789609571-36760872.jpeg"
-      },
-      "comments": [
-        {
-          "id": "46a49bb3-59cf-4ea3-9376-18b52cd564b1",
-          "comment": "Hi",
-          "createdAt": "2024-02-25T09:04:10.370Z",
-          "author": {
-            "id": "6fd3ed42-2275-4d5f-a436-e5a3bf586c56",
-            "name": "Saad Hasan",
-            "avatar": "uploads/avatar/avatar-1708849386635-121791126.png"
-          }
-        }
-      ],
-      "likes": [
-        "6fd3ed42-2275-4d5f-a436-e5a3bf586c56"
-      ],
-      "createAt": "2024-02-25T06:59:36.184Z"
-    },
-    {
       "id": "ae7a9d01-a4aa-46ad-b58a-f9c0e5ba1bf2",
       "content": "456",
       "image": null,
@@ -505,7 +478,7 @@
     },
     {
       "id": "23be0512-6a10-4e71-b8cd-2ae47d9d7971",
-      "content": "SEII",
+      "content": "Helllllllo",
       "image": null,
       "postType": "text",
       "author": {
@@ -516,34 +489,6 @@
       "comments": [],
       "likes": [],
       "createAt": "2024-02-25T07:02:51.676Z"
-    },
-    {
-      "id": "e60c5172-ecb6-46b7-bd18-f66c8942a765",
-      "content": "SEII555",
-      "image": null,
-      "postType": "text",
-      "author": {
-        "id": "6fd3ed42-2275-4d5f-a436-e5a3bf586c56",
-        "name": "Saad Hasan",
-        "avatar": "uploads/avatar/avatar-1708789609571-36760872.jpeg"
-      },
-      "comments": [],
-      "likes": [],
-      "createAt": "2024-02-25T07:04:19.291Z"
-    },
-    {
-      "id": "0730fdcb-2e53-4818-92ec-3dab11c965e1",
-      "content": "Hey",
-      "image": null,
-      "postType": "text",
-      "author": {
-        "id": "6fd3ed42-2275-4d5f-a436-e5a3bf586c56",
-        "name": "Saad Hasan",
-        "avatar": "uploads/avatar/avatar-1709816550752-796272750.png"
-      },
-      "comments": [],
-      "likes": [],
-      "createAt": "2024-03-07T13:30:27.719Z"
     }
   ],
   "comments": [],

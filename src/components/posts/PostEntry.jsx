@@ -8,11 +8,12 @@ import AddPhoto from "../../assets/icons/addPhoto.svg";
 import { actions } from "../../actions";
 import { IoMdCloseCircle } from "react-icons/io";
 
-const PostEntry = () => {
+const PostEntry = ({ setShowModal }) => {
   const { auth } = useAuth();
-  const { dispatch, setShowPostEntry } = usePost();
+  const { dispatch, postToEdit, setPostToEdit } = usePost();
   const { api } = useAxios();
   const { state: profile } = useProfile();
+  console.log(postToEdit);
 
   const user = profile?.user ?? auth?.user;
 
@@ -20,45 +21,59 @@ const PostEntry = () => {
     register,
     handleSubmit,
     formState: { errors },
-    setError,
   } = useForm();
 
   const handlePostSubmit = async (formData) => {
     dispatch({ type: actions.post.DATA_FETCHING });
 
     try {
-      const response = await api.post(
-        `${import.meta.env.VITE_SERVER_BASE_URL}/posts`,
-        { formData }
-      );
+      let response;
+      if (postToEdit) {
+        response = await api.patch(
+          `${import.meta.env.VITE_SERVER_BASE_URL}/posts/${postToEdit.id}`,
+          formData
+        );
+      } else {
+        response = await api.post(
+          `${import.meta.env.VITE_SERVER_BASE_URL}/posts`,
+          formData
+        );
+      }
 
       if (response.status === 200) {
-        dispatch({
-          type: actions.post.DATA_CREATED,
-          data: response.data,
-        });
-
+        if (postToEdit) {
+          dispatch({ type: actions.post.DATA_EDITED, data: response.data });
+          setPostToEdit(null);
+        } else {
+          dispatch({
+            type: actions.post.DATA_CREATED,
+            data: response.data,
+          });
+        }
         // Close this UI
-        setShowPostEntry(false);
+        setShowModal();
       }
     } catch (error) {
       console.error(error);
       dispatch({
         type: actions.post.DATA_FETCH_ERROR,
-        error: response.error,
+        error: error.message,
       });
     }
   };
+
+  const closeModal = () => {
+    setShowModal();
+    setPostToEdit(null);
+  };
+  
   return (
     <div className="card relative">
       <div className="flex justify-between">
         <h6 className="mb-3 ml-80 text-center text-lg font-bold lg:text-xl">
-          Create Post
+          {postToEdit ? "Edit Post" : "Create Post"}
         </h6>
-        <button
-          className="text-3xl mb-3"
-          onClick={() => setShowPostEntry(false)}
-        >
+        <button className="text-3xl mb-3" onClick={closeModal}>
           <IoMdCloseCircle />
         </button>
       </div>

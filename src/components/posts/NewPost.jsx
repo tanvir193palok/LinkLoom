@@ -2,9 +2,10 @@ import { useAuth } from "../../hooks/useAuth";
 import PostEntry from "./PostEntry";
 import { useProfile } from "../../hooks/useProfile";
 import { usePost } from "../../hooks/usePost";
+import { useState } from "react";
 
 const NewPost = () => {
-  const { showPostEntry, setShowPostEntry } = usePost();
+  const [showPostEntry, setShowPostEntry] = useState();
   const { auth } = useAuth();
   const { state: profile } = useProfile();
   const user = profile?.user ?? auth?.user;
@@ -12,7 +13,7 @@ const NewPost = () => {
   return (
     <>
       {showPostEntry ? (
-        <PostEntry />
+        <PostEntry setShowModal={() => setShowPostEntry(false)} />
       ) : (
         <div className="card">
           <div className="flex-center mb-3 gap-2 lg:gap-4">
