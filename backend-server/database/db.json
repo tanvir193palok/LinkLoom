@@ -334,7 +334,7 @@
     },
     {
       "id": "82e8e57d-e7b8-4cfb-ac70-ff6283f0e8bf",
-      "content": "While ESLint is designed to be run on the command line, it’s possible to use ESLint programmatically through the Node.js API. The purpose of the Node.js API is to allow plugin and tool authors to use the ESLint functionality directly, without going through the command line interface.\n\nNote: Use undocumented parts of the API at your own risk. Only those parts that are specifically mentioned in this document are approved for use and will remain stable and reliable. ",
+      "content": "While ESLint is designed to be run on the command line, it’s possible to use ESLint programmatically through the Node.js API. The purpose of the Node.js API is to allow plugin and tool authors to use the ESLint functionality directly.\r\n\r\n",
       "image": null,
       "postType": "text",
       "author": {
@@ -365,7 +365,12 @@
         }
       ],
       "likes": [],
-      "createAt": "2024-02-25T06:25:58.990Z"
+      "createAt": "2024-02-25T06:25:58.990Z",
+      "picture": {},
+      "formData": {
+        "picture": {},
+        "content": "While ESLint is designed to be run on the command line, it’s possible to use ESLint programmatically through the Node.js API. The purpose of the Node.js API is to allow plugin and tool authors to use the ESLint functionality directly.\n\n"
+      }
     }
   ],
   "comments": [],

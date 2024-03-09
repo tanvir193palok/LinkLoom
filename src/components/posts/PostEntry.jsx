@@ -47,7 +47,7 @@ const PostEntry = ({ setShowModal }) => {
       } else {
         response = await api.post(
           `${import.meta.env.VITE_SERVER_BASE_URL}/posts`,
-          formData
+          { formData }
         );
       }
 
@@ -82,6 +82,7 @@ const PostEntry = ({ setShowModal }) => {
       ...post,
       [name]: value,
     });
+    console.log(post);
   };
 
   //Function for closing the Post Entry
@@ -116,6 +117,7 @@ const PostEntry = ({ setShowModal }) => {
               <span className="text-sm text-gray-400 lg:text-base">Public</span>
             </div>
           </div>
+
           <label
             className="btn-primary cursor-pointer !text-gray-100"
             htmlFor="photo"
@@ -123,14 +125,7 @@ const PostEntry = ({ setShowModal }) => {
             <img src={AddPhoto} alt="Add Photo" />
             Add Photo
           </label>
-          <input
-            type="file"
-            name="photo"
-            id="photo"
-            value={post.image}
-            onChange={handleChange}
-            className="hidden"
-          />
+          <input type="file" name="photo" id="photo" className="hidden" />
         </div>
         <Field label="" error={errors.content}>
           <textarea
