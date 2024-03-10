@@ -15,6 +15,15 @@ const PostEntry = ({ setShowModal }) => {
   const { api } = useAxios();
   const { state: profile } = useProfile();
 
+  //For adding or editing image button
+  const imageButtonText =
+    postToEdit === null
+      ? "Add Photo"
+      : postToEdit.image
+      ? postToEdit.image
+      : "Add Photo";
+  const [showImageButton, setShowImageButton] = useState(imageButtonText);
+
   const user = profile?.user ?? auth?.user;
 
   const [post, setPost] = useState(() => {
@@ -51,6 +60,8 @@ const PostEntry = ({ setShowModal }) => {
       ...prevPost,
       image: file,
     }));
+
+    setShowImageButton(file.name);
   };
 
   //Function for closing the Post Entry
@@ -82,12 +93,12 @@ const PostEntry = ({ setShowModal }) => {
           `${import.meta.env.VITE_SERVER_BASE_URL}/posts/${postToEdit.id}`,
           formData
         );
+        console.log(response);
       } else {
         response = await api.post(
           `${import.meta.env.VITE_SERVER_BASE_URL}/posts`,
           formData
         );
-        console.log(response);
       }
 
       if (response.status === 200) {
@@ -100,7 +111,7 @@ const PostEntry = ({ setShowModal }) => {
             data: response.data,
           });
         }
-        // Close this UI
+        // Close the modal
         setShowModal();
       }
     } catch (error) {
@@ -144,7 +155,7 @@ const PostEntry = ({ setShowModal }) => {
             className="btn-primary cursor-pointer !text-gray-100"
           >
             <img src={AddPhoto} alt="Add Photo" />
-            Add Photo
+            {showImageButton}
             <input
               type="file"
               name="image"
