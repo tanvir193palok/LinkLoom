@@ -34,8 +34,46 @@ const PostEntry = ({ setShowModal }) => {
     formState: { errors },
   } = useForm();
 
-  const handlePostSubmit = async (formData) => {
+  //Function for handling Post Entry field change
+  const handleChange = (event) => {
+    const { name, value } = event.target;
+
+    setPost((prevPost) => ({
+      ...prevPost,
+      [name]: value,
+    }));
+  };
+
+  // Function to handle file upload
+  const handleFileUpload = (event) => {
+    const file = event.target.files[0];
+    setPost((prevPost) => ({
+      ...prevPost,
+      image: file,
+    }));
+  };
+
+  //Function for closing the Post Entry
+  const closeModal = () => {
+    setShowModal();
+    setPostToEdit(null);
+  };
+
+  const handlePostSubmit = async () => {
     dispatch({ type: actions.post.DATA_FETCHING });
+
+    const formData = new FormData();
+    formData.append("content", post.content);
+
+    // Append image file if it exists in the post state
+    if (post.image) {
+      formData.append("image", post.image);
+    }
+
+    // Log each entry in the FormData
+    for (const entry of formData.entries()) {
+      console.log(entry);
+    }
 
     try {
       let response;
@@ -47,8 +85,9 @@ const PostEntry = ({ setShowModal }) => {
       } else {
         response = await api.post(
           `${import.meta.env.VITE_SERVER_BASE_URL}/posts`,
-          { formData }
+          formData
         );
+        console.log(response);
       }
 
       if (response.status === 200) {
@@ -71,24 +110,6 @@ const PostEntry = ({ setShowModal }) => {
         error: error.message,
       });
     }
-  };
-
-  //Function for handling Post Entry field change
-  const handleChange = (event) => {
-    const name = event.target.name;
-    const value = event.target.value;
-
-    setPost({
-      ...post,
-      [name]: value,
-    });
-    console.log(post);
-  };
-
-  //Function for closing the Post Entry
-  const closeModal = () => {
-    setShowModal();
-    setPostToEdit(null);
   };
 
   return (
@@ -119,13 +140,21 @@ const PostEntry = ({ setShowModal }) => {
           </div>
 
           <label
-            className="btn-primary cursor-pointer !text-gray-100"
             htmlFor="photo"
+            className="btn-primary cursor-pointer !text-gray-100"
           >
             <img src={AddPhoto} alt="Add Photo" />
             Add Photo
+            <input
+              type="file"
+              name="image"
+              id="photo"
+              className="hidden"
+              accept="image/*"
+              {...register("image")}
+              onChange={handleFileUpload}
+            />
           </label>
-          <input type="file" name="photo" id="photo" className="hidden" />
         </div>
         <Field label="" error={errors.content}>
           <textarea
