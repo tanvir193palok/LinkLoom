@@ -22,7 +22,7 @@ const PrivateRoutes = () => {
           </PostProvider>
         </>
       ) : (
-        <Navigate to="/login" />
+        <Navigate to="/" />
       )}
     </>
   );
