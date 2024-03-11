@@ -2,6 +2,7 @@ import { useState } from "react";
 import PostCommentList from "./PostCommentList";
 import { useAxios } from "../../hooks/useAxios";
 import { useAuth } from "../../hooks/useAuth";
+import { useProfile } from "../../hooks/useProfile";
 
 const PostComments = ({ post, commentCount, setCommentCount }) => {
   const [showComments, setShowComments] = useState(false);
@@ -13,6 +14,8 @@ const PostComments = ({ post, commentCount, setCommentCount }) => {
   const [comment, setComment] = useState("");
   const { auth } = useAuth();
   const { api } = useAxios();
+  const { state: profile } = useProfile();
+  const user = profile?.user ?? auth?.user;
 
   const addComment = async (e) => {
     const keyCode = event.keyCode;
@@ -41,7 +44,7 @@ const PostComments = ({ post, commentCount, setCommentCount }) => {
       <div className="flex-center mb-3 gap-2 lg:gap-4">
         <img
           className="max-w-7 max-h-7 rounded-full lg:max-h-[34px] lg:max-w-[34px]"
-          src={`${import.meta.env.VITE_SERVER_BASE_URL}/${auth?.user?.avatar}`}
+          src={`${import.meta.env.VITE_SERVER_BASE_URL}/${user?.avatar}`}
           alt="avatar"
         />
 

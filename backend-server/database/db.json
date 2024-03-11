@@ -20,6 +20,16 @@
             "name": "Saad Hasan",
             "avatar": "uploads/avatar/avatar-1708789609571-36760872.jpeg"
           }
+        },
+        {
+          "id": "affb713a-a575-40e4-927b-da48428e4ede",
+          "comment": "Hey",
+          "createdAt": "2024-03-11T12:10:00.594Z",
+          "author": {
+            "id": "ae52a818-2063-4345-bbf8-d311aff71b29",
+            "name": "Tanvir Ahmed Palok",
+            "avatar": "uploads/avatar/avatar-1710158674999-153004605.png"
+          }
         }
       ],
       "likes": [
@@ -86,6 +96,34 @@
       "comments": [],
       "likes": [],
       "createAt": "2024-03-11T11:27:09.339Z"
+    },
+    {
+      "id": "beef6bf8-c1b8-4474-8736-f5e8017ad922",
+      "content": "Coding is an art, and the front end is your canvas. With each line of code, you paint the user experience, shaping the digital world one pixel at a time.",
+      "image": null,
+      "postType": "text",
+      "author": {
+        "id": "ae52a818-2063-4345-bbf8-d311aff71b29",
+        "name": "Tanvir Ahmed Palok",
+        "avatar": "uploads/avatar/avatar-1710158674999-153004605.png"
+      },
+      "comments": [],
+      "likes": [],
+      "createAt": "2024-03-11T12:07:18.816Z"
+    },
+    {
+      "id": "3c1e788e-3037-4a62-9e0f-7bbcb437217d",
+      "content": "React is not just a library; it's a paradigm shift in how we approach building user interfaces. With its component-based architecture and declarative syntax, React empowers developers to create scalable, interactive, and maintainable web applications with ease.\r\n\r\nAt the heart of React lies its virtual DOM, a lightweight representation of the actual DOM. By efficiently updating only the necessary parts of the DOM when state or props change, React ensures optimal performance and a seamless user experience.\r\n\r\nWith its unidirectional data flow and one-way data binding, React simplifies state management and reduces the risk of bugs, making it ideal for building complex UIs. Additionally, React's ecosystem is rich with tools and libraries like Redux, React Router, and Material-UI, providing developers with everything they need to build sophisticated web applications.\r\n\r\nIn essence, React is not just a framework; it's a philosophy—a commitment to simplicity, efficiency, and innovation in web development. And as the web continues to evolve, React remains at the forefront, shaping the future of front-end development.",
+      "image": "uploads/posts/image-1710158956292-825936449.png",
+      "postType": "image",
+      "author": {
+        "id": "ae52a818-2063-4345-bbf8-d311aff71b29",
+        "name": "Tanvir Ahmed Palok",
+        "avatar": "uploads/avatar/avatar-1710158674999-153004605.png"
+      },
+      "comments": [],
+      "likes": [],
+      "createAt": "2024-03-11T12:09:16.300Z"
     }
   ],
   "comments": [],
@@ -146,8 +184,17 @@
       "password": "$2b$08$Xb/plW06rYpNuSP9g8xeouF5me2lakNS/gAHRQgxgKszd5f4Et5Om",
       "firstName": "Tanvir Ahmed",
       "lastName": "Palok",
-      "avatar": null,
-      "email": "tanvir.ahmed.palok@g.bracu.ac.bd"
+      "avatar": "uploads/avatar/avatar-1710158674999-153004605.png",
+      "email": "tanvir.ahmed.palok@g.bracu.ac.bd",
+      "bio": ""
+    },
+    {
+      "id": "08400236-8a6b-4b88-8774-85c2a33a7fcc",
+      "password": "$2b$08$trGAefz6sRnug00tQuLkRelFp6N0Omzwy0LPwyoGhsP813GK75B1W",
+      "firstName": "Tanzim",
+      "lastName": "Islam",
+      "avatar": "uploads/avatar/avatar-1710160584839-990430007.jpg",
+      "email": "shahrear.alam@g.bracu.ac.bd"
     }
   ]
 }
