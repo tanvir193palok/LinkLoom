@@ -140,6 +140,14 @@
       "avatar": "uploads/avatar/avatar-1708802845791-219561000.png",
       "email": "rambo@email.com",
       "bio": "I am Rambo!!!"
+    },
+    {
+      "id": "ae52a818-2063-4345-bbf8-d311aff71b29",
+      "password": "$2b$08$Xb/plW06rYpNuSP9g8xeouF5me2lakNS/gAHRQgxgKszd5f4Et5Om",
+      "firstName": "Tanvir Ahmed",
+      "lastName": "Palok",
+      "avatar": null,
+      "email": "tanvir.ahmed.palok@g.bracu.ac.bd"
     }
   ]
 }
