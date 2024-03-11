@@ -8,13 +8,7 @@ const cors = require("cors");
 const app = jsonServer.create();
 const router = jsonServer.router("./database/db.json");
 
-app.use(
-  cors({
-    credentials: true,
-    origin: ["https://link-loom-server.vercel.app/"],
-    methods: ["POST", "GET"],
-  })
-);
+app.use(cors({ credentials: true, origin: true }));
 app.use(express.static(__dirname + "/public"));
 app.use("/uploads", express.static("uploads"));
 
