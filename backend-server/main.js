@@ -11,7 +11,7 @@ const router = jsonServer.router("./database/db.json");
 app.use(
   cors({
     credentials: true,
-    origin: ["https://link-loom-server.vercel.app"],
+    origin: ["https://link-loom-server.vercel.app/"],
     methods: ["POST", "GET"],
   })
 );
