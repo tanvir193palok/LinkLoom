@@ -145,7 +145,7 @@
     {
       "id": "6fd3ed42-2275-4d5f-a436-e5a3bf586c56",
       "password": "$2b$08$t5Aar/0hgHTMdCeLtn3KhOlWDVIAHcFUTkRPeWASPhbYAea5kxKvW",
-      "firstName": "Saad",
+      "firstName": "Saadh",
       "lastName": "Hasan",
       "avatar": "uploads/avatar/avatar-1710061561536-339246699.png",
       "email": "saadh392@mail.com",
@@ -175,40 +175,6 @@
       "lastName": "Ahmed",
       "avatar": "uploads/avatar/akash.png",
       "email": "akash@email.com"
-    },
-    {
-      "id": "ea168626-058e-49dd-b23c-3000e7bd0173",
-      "password": "$2b$08$Og7chSn5OMA4LpuzCFQGi.1j5bhGtX2q5efo1aARolnbzpZmbNMVO",
-      "firstName": "MD",
-      "lastName": "Salahuddin",
-      "avatar": "uploads/avatar/607270927370289259_n.jpg",
-      "email": "salahuddin@email.com"
-    },
-    {
-      "id": "8fea109f-9c4a-45de-8b53-9b6a9a386e02",
-      "password": "$2b$08$usstcONuQ3QEytuzO8NQbe7hA3X4UMHfCdjfzRtiygzIe3exOuUWe",
-      "firstName": "Rambo",
-      "lastName": "Bony",
-      "avatar": "uploads/avatar/avatar-1708802845791-219561000.png",
-      "email": "rambo@email.com",
-      "bio": "I am Rambo!!!"
-    },
-    {
-      "id": "ae52a818-2063-4345-bbf8-d311aff71b29",
-      "password": "$2b$08$Xb/plW06rYpNuSP9g8xeouF5me2lakNS/gAHRQgxgKszd5f4Et5Om",
-      "firstName": "Tanvir Ahmed",
-      "lastName": "Palok",
-      "avatar": "uploads/avatar/avatar-1710158674999-153004605.png",
-      "email": "tanvir.ahmed.palok@g.bracu.ac.bd",
-      "bio": ""
-    },
-    {
-      "id": "08400236-8a6b-4b88-8774-85c2a33a7fcc",
-      "password": "$2b$08$trGAefz6sRnug00tQuLkRelFp6N0Omzwy0LPwyoGhsP813GK75B1W",
-      "firstName": "Tanzim",
-      "lastName": "Islam",
-      "avatar": "uploads/avatar/avatar-1710160584839-990430007.jpg",
-      "email": "shahrear.alam@g.bracu.ac.bd"
     }
   ]
 }
