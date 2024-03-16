@@ -138,6 +138,20 @@
       "comments": [],
       "likes": [],
       "createAt": "2024-03-11T12:39:38.682Z"
+    },
+    {
+      "id": "16bd35aa-a886-43e3-a326-e1d3ec90ea7f",
+      "content": "Life is a journey, not a destination. Along the way, remember to embrace the challenges, celebrate the victories, and cherish the moments of joy. Each step you take brings you closer to your dreams. Believe in yourself, stay resilient, and never lose sight of the incredible potential within you. With determination and perseverance, you can turn every obstacle into an opportunity and every setback into a stepping stone toward greatness. So, keep moving forward, for the best is yet to come.",
+      "image": null,
+      "postType": "text",
+      "author": {
+        "id": "40fb4b7b-0292-49d7-b833-fbc18ec70d8a",
+        "name": "Tanvir Ahmed",
+        "avatar": "uploads/avatar/avatar-1710587633889-732555836.png"
+      },
+      "comments": [],
+      "likes": [],
+      "createAt": "2024-03-16T11:15:40.079Z"
     }
   ],
   "comments": [],
@@ -175,6 +189,15 @@
       "lastName": "Ahmed",
       "avatar": "uploads/avatar/akash.png",
       "email": "akash@email.com"
+    },
+    {
+      "id": "40fb4b7b-0292-49d7-b833-fbc18ec70d8a",
+      "password": "$2b$08$eIjdvrDDdSqLcV0Hib1JIOKNgVjmUNnN9yRdJuke2yCcNxOUuzIIW",
+      "firstName": "Tanvir",
+      "lastName": "Ahmed",
+      "avatar": "uploads/avatar/avatar-1710604328695-762976694.png",
+      "email": "tanvir12@gmail.com",
+      "bio": "Enthusiastic Frontend Developer Seeking Internship Opportunity | JavaScript | React | Java | Python"
     }
   ]
 }
