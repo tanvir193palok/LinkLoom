@@ -135,8 +135,21 @@
         "name": "Tanzim Islam",
         "avatar": "uploads/avatar/avatar-1710160584839-990430007.jpg"
       },
-      "comments": [],
-      "likes": [],
+      "comments": [
+        {
+          "id": "e3e16389-9f83-4de6-a161-87b0216fe945",
+          "comment": "True",
+          "createdAt": "2024-03-16T16:03:32.082Z",
+          "author": {
+            "id": "40fb4b7b-0292-49d7-b833-fbc18ec70d8a",
+            "name": "Tanvir Ahmed",
+            "avatar": "uploads/avatar/avatar-1710604954341-288032017.png"
+          }
+        }
+      ],
+      "likes": [
+        "40fb4b7b-0292-49d7-b833-fbc18ec70d8a"
+      ],
       "createAt": "2024-03-11T12:39:38.682Z"
     },
     {
@@ -195,7 +208,7 @@
       "password": "$2b$08$eIjdvrDDdSqLcV0Hib1JIOKNgVjmUNnN9yRdJuke2yCcNxOUuzIIW",
       "firstName": "Tanvir",
       "lastName": "Ahmed",
-      "avatar": "uploads/avatar/avatar-1710604328695-762976694.png",
+      "avatar": "uploads/avatar/avatar-1710605039414-978115788.png",
       "email": "tanvir12@gmail.com",
       "bio": "Enthusiastic Frontend Developer Seeking Internship Opportunity | JavaScript | React | Java | Python"
     }
